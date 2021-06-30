@@ -3,6 +3,8 @@ const { ViewPropTypes,I18nManager} = ReactNative = require('react-native');
 
 const PropTypes = require('prop-types');
 const createReactClass = require('create-react-class');
+import InvertibleScrollView from 'react-native-invertible-scroll-view';
+
 const {
   View,
   Animated,
@@ -197,7 +199,7 @@ width: this.state._widthTabUnderline
           })}
           <Animated.View style={[tabUnderlineStyle, dynamicTabUnderline, this.props.underlineStyle, ]} />
         </View>
-      </ScrollView>
+      </InvertibleScrollView>
     </View>;
   },
 
