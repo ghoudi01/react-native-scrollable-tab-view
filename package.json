@@ -33,7 +33,7 @@
     "create-react-class": "^15.6.2",
     "prop-types": "^15.6.0",
     "react-timer-mixin": "^0.13.3",
-    "react-native-invertible-scroll-view":"2.0.0"
+    "react-native-invertible-scroll-view":"^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
