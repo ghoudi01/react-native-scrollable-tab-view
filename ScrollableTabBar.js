@@ -1,10 +1,7 @@
 const React = require('react');
-const { ViewPropTypes,I18nManager} = ReactNative = require('react-native');
-
+const { ViewPropTypes,I18nManager } = ReactNative = require('react-native');
 const PropTypes = require('prop-types');
 const createReactClass = require('create-react-class');
-import InvertibleScrollView from 'react-native-invertible-scroll-view';
-
 const {
   View,
   Animated,
@@ -15,7 +12,7 @@ const {
   Dimensions,
 } = ReactNative;
 const Button = require('./Button');
-
+import InvertibleScrollView from 'react-native-invertible-scroll-view';
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
 const ScrollableTabBar = createReactClass({
@@ -162,21 +159,16 @@ const ScrollableTabBar = createReactClass({
       bottom: 0,
     };
 
-  const key = I18nManager.isRTL ? 'right' : 'left';
-const dynamicTabUnderline = {
-[key]: this.state._leftTabUnderline,
-width: this.state._widthTabUnderline
-}
-
-    const {
-      onScroll,
-    } = this.props;
-
+    const key = I18nManager.isRTL ? 'right' : 'left';
+    const dynamicTabUnderline = {
+    [key]: this.state._leftTabUnderline,
+    width: this.state._widthTabUnderline
+    }
     return <View
       style={[styles.container, {backgroundColor: this.props.backgroundColor, }, this.props.style, ]}
       onLayout={this.onContainerLayout}
     >
-      <InvertibleScrollView inverted={I18nManager.isRTL ?true :false}
+     <InvertibleScrollView inverted={I18nManager.isRTL ?true :false}
         ref={(scrollView) => { this._scrollView = scrollView; }}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -184,8 +176,6 @@ width: this.state._widthTabUnderline
         directionalLockEnabled={true}
         bounces={false}
         scrollsToTop={false}
-        onScroll={onScroll}
-        scrollEventThrottle={16}
       >
         <View
           style={[styles.tabs, {width: this.state._containerWidth, }, this.props.tabsContainerStyle, ]}
