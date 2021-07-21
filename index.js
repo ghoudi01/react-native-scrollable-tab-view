@@ -9,6 +9,7 @@ const {
   Animated,
   ScrollView,
    StyleSheet,
+    Platform
  } = ReactNative;
 const TimerMixin = require('react-timer-mixin');
 
@@ -149,7 +150,7 @@ const ScrollableTabView = createReactClass({
       keyboardDismissMode="on-drag"
       {...this.props.contentProps}
     >
-      {scenes}
+  {Platform.OS=="ios" ?scenes:scenes.reverse()}
     </ScrollView>;
   },
 
