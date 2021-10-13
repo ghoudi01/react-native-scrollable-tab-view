@@ -159,7 +159,7 @@ const ScrollableTabBar = createReactClass({
       bottom: 0,
     };
 
-    const key = this.props.local=="ar" ? 'right' : 'left';
+    const key =this.props.local=="ar"?"right":"left";  
     const dynamicTabUnderline = {
     [key]: this.state._leftTabUnderline,
     width: this.state._widthTabUnderline
@@ -168,7 +168,7 @@ const ScrollableTabBar = createReactClass({
       style={[styles.container, {backgroundColor: this.props.backgroundColor, }, this.props.style, ]}
       onLayout={this.onContainerLayout}
     >
-     <InvertibleScrollView inverted={ this.props.local=="ar"  ? false :true}
+     <InvertibleScrollView inverted={this.props.local=="ar"?true:false}
         ref={(scrollView) => { this._scrollView = scrollView; }}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
